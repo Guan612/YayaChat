@@ -1,17 +1,15 @@
-import SideIcon from "./compmnet/sideincon";
+import SideIcon from "./compmnet/sideicon";
 import { Outlet } from "react-router-dom";
 
-function Layout() {
+export default function Layout() {
     return (
         <div className="flex flex-row h-screen overflow-hidden">
-            <div className="hidden md:block md:basis-1/5 flex-col bg-red-300">
-                <SideIcon></SideIcon>
+            <div className="hidden md:block md:basis-1/12 flex-col bg-red-300">
+                <SideIcon />
             </div>
-            <div className="flex-1 md:basis-4/5 bg-blue-300">
+            <div className="flex-1 md:basis-11/12 bg-blue-300">
                 <Outlet />
             </div>
         </div>
     );
 }
-
-export default Layout;
