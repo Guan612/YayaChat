@@ -1,8 +1,10 @@
-import * as Koa from 'koa';
-import * as Router from 'koa-router';
+import Koa = require("koa");
+import index from "./routers/index";
 
-const koa = new Koa();
-const router = new Router();
+const app = new Koa();
 
-router.get('/', async (ctx) => { ctx.body = 'Hello World' });
-koa.listen(3000, () => console.log('Server is running on http://localhost:3000'));
+app.use(index.routes());
+
+app.listen(3000, () => {
+    console.log("listen 3000 OK");
+});
