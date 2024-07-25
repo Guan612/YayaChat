@@ -1,12 +1,8 @@
-import Router = require("koa-router");
+import Router from 'koa-router';
+const router = new Router();
 
-const router: Router = new Router();
+const userRouter = require('./user.router');
 
-router.get("/", (ctx: any) => {
-    ctx.body = "router index";
-});
-router.get("/home", (ctx: any) => {
-    ctx.body = "router home";
-});
+router.use('/users',userRouter.routes());
 
-export default router;
+module.exports = router;
